@@ -34,7 +34,7 @@ public class FoodItemController {
     // UPDATE
     @PutMapping("/{id}")
     public ResponseEntity<FoodItem> atualizar(@RequestBody FoodItem fooditem, @PathVariable Long id) {
-        service.buscarPorId(id)
+        return service.buscarPorId(id)
                 .map(itemExistente -> {
                     fooditem.setId(itemExistente.getId());
                     FoodItem atualizado = service.atualizar(fooditem);
@@ -44,7 +44,7 @@ public class FoodItemController {
     }
 
     // DELETE
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> excluir(@PathVariable Long id) {
         service.excluir(id);
         return ResponseEntity.noContent().build();
