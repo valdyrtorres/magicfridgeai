@@ -10,7 +10,7 @@ import java.util.Optional;
 @Service
 public class FoodItemService {
 
-    private FoodItemRepository repository;
+    private final FoodItemRepository repository;
 
     public FoodItemService(FoodItemRepository repository) {
         this.repository = repository;
