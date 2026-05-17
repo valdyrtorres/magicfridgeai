@@ -27,7 +27,7 @@ public class FoodItemController {
     // GET
     @GetMapping
     public ResponseEntity<List<FoodItem>> listar() {
-        List<FoodItem> lista = service.listar();
+        List<FoodItem> lista = service.listarTodos();
         return ResponseEntity.ok(lista);
     }
 
